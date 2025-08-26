@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pokedex</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Nombre o ID del Pokémon">
+                <button id="search-btn">Buscar</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="pokemon-card" class="hidden">
+                <div class="card-header">
+                    <h2 id="pokemon-name"></h2>
+                    <span id="pokemon-id"></span>
+                </div>
+                <div class="card-body">
+                    <img id="pokemon-img" src="" alt="Pokemon">
+                    <div class="types" id="pokemon-types"></div>
+                    <div class="details">
+                        <h3>Detalles</h3>
+                        <p>Altura: <span id="pokemon-height"></span> m</p>
+                        <p>Peso: <span id="pokemon-weight"></span> kg</p>
+                        <div class="abilities">
+                            <h3>Habilidades</h3>
+                            <ul id="pokemon-abilities"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats">
+                    <h3>Estadísticas</h3>
+                    <div class="stats-grid" id="pokemon-stats"></div>
+                </div>
+            </div>
+            <div id="error-message" class="hidden"></div>
+            <div id="loading" class="hidden">Cargando...</div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
